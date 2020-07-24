@@ -30,6 +30,7 @@ class contentRouter extends Component {
     var AsyncComponent = asyncComponent(() =>
       import(`@/page/${data.component}/index.js`)
     )
+    console.log(111)
     if (data.url !== '/') {
       return (
         <Route key={data.id} path={data.url} component={AsyncComponent}></Route>
