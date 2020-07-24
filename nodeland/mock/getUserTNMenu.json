@@ -1,0 +1,109 @@
+{
+  "result": "1",
+  "msg": "数据操作成功",
+  "datas": [
+    {
+      "id": "M_U155308125680157473",
+      "name": "首页",
+      "parentId": "1",
+      "resourceId": "U155308127392459296",
+      "sortOrder": 15,
+      "state": "1",
+      "icon": "",
+      "url": "/",
+      "component":"home",
+      "resource": {
+        "id": "U155308127392459296",
+        "name": "首页",
+        
+        "createTime": 1553081274000,
+        "state": "1",
+        "opAuths": null,
+        "auths": null,
+        "type": "other_resource",
+        "prefix": null
+      },
+      "childs": []
+    },
+    {
+      "id": "M_U155307361536938460",
+      "name": "董事会人员管理",
+      "parentId": "1",
+      "resourceId": "",
+      "sortOrder": 16,
+      "state": "1",
+      "icon": "",
+      "resource": null,
+      "childs": [
+        {
+          "id": "M_U155307378078430458",
+          "name": "章程规定人数填写",
+          "parentId": "M_U155307361536938460",
+          "resourceId": "U155308161085715315",
+          "sortOrder": 2,
+          "state": "1",
+          "icon": "",
+          "url": "/directoratePeopleWrite",
+          "component":"directoratePeopleWrite",
+          "resource": {
+            "id": "U155308161085715315",
+            "name": "董事会成员计划填写",
+            
+            "createTime": 1553081611000,
+            "state": "1",
+            "opAuths": null,
+            "auths": null,
+            "type": "other_resource",
+            "prefix": null
+          },
+          "childs": []
+        },
+        {
+          "id": "M_U155307380196326495",
+          "name": "在任董事会成员管理",
+          "parentId": "M_U155307361536938460",
+          "resourceId": "U155308162068508728",
+          "sortOrder": 3,
+          "state": "1",
+          "icon": "",
+          "url": "/directoratePeopleManage",
+          "component":"directoratePeopleManage",
+          "resource": {
+            "id": "U155308162068508728",
+            "name": "董事会成员管理",
+            
+            "createTime": 1553081621000,
+            "state": "1",
+            "opAuths": null,
+            "auths": null,
+            "type": "other_resource",
+            "prefix": null
+          },
+          "childs": []
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "component":"home",
+      "id": "M_U155308125680157473",
+      "url": "/"
+    },
+    {
+      "component":"directoratePeopleWrite",
+      "id": "M_U155307378078430458",
+      "url": "/directoratePeopleWrite"
+    },
+    {
+      "component":"directoratePeopleManage",
+      "id": "M_U155307380196326495",
+      "url": "/directoratePeopleManage"
+    }
+  ],
+  "totalPage": 0,
+  "totalNum": 0,
+  "perPageSize": 10,
+  "size": 34,
+  "map": {}
+}
