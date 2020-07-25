@@ -5,9 +5,8 @@ import { connect } from 'react-redux'
 import asyncComponent from '@/utils/asyncComponent'
 import home from '@/page/home'
 const mapStateToProps = (state) => ({ user: state.user })
-
-@connect(mapStateToProps, { getUser })
 @withRouter
+@connect(mapStateToProps, { getUser })
 class contentRouter extends Component {
   constructor(props) {
     super(props)
@@ -30,10 +29,10 @@ class contentRouter extends Component {
     var AsyncComponent = asyncComponent(() =>
       import(`@/page/${data.component}/index.js`)
     )
-    console.log(111)
+    console.log(`/work${data.url}`)
     if (data.url !== '/') {
       return (
-        <Route key={data.id} path={data.url} component={AsyncComponent}></Route>
+        <Route key={data.id} path={`${data.url}`} component={AsyncComponent}></Route>
       )
     }
   }
@@ -43,7 +42,7 @@ class contentRouter extends Component {
         {this.state.menuList.map((item) => {
           return this.reverseDom(item)
         })}
-        <Route path="/" component={home}></Route>
+        <Route exact  path="/" component={home}></Route>
         <Redirect to="/" />
       </Switch>
     )

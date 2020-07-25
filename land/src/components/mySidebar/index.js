@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'antd'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter, Link,BrowserRouter  } from 'react-router-dom'
 import { getUser } from '@/redux/actions'
 import { connect } from 'react-redux'
 // import { bindActionCreators } from 'redux'
@@ -50,12 +50,14 @@ class mySidebar extends Component {
     const { menuList } = this.state
     return (
       <div className="sidebar">
+       
         <Menu
           mode="inline"
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
           style={{ height: '100%', borderRight: 0 }}
         >
+          
           {menuList.map((item, idx) => {
             return this.reverseDom(item)
 

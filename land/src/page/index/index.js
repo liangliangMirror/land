@@ -1,25 +1,20 @@
 import React from 'react'
 import { Layout } from 'antd'
 import MyHeader from '@/components/myHeader'
-import MySidebar from '@/components/mySidebar'
-import ContentRouter from '@/components/contentRouter'
-const { Header, Content, Sider } = Layout;
+import { BrowserRouter} from 'react-router-dom'
+import PageRouter from '@/router/pageRouter'
+const { Header} = Layout;
 class Index extends React.Component {
   render() {
     return (
+      <BrowserRouter basename="/">
       <Layout className="App">
         <Header>
           <MyHeader></MyHeader>
         </Header>
-        <Layout>
-            <Sider width={200} style={{background:'#fff',height:'100%'}}>
-                <MySidebar></MySidebar>
-            </Sider>
-            <Content>
-              <ContentRouter />
-            </Content>
-        </Layout>
+          <PageRouter />
       </Layout>
+      </BrowserRouter>
     )
   }
 }
