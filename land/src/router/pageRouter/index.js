@@ -8,7 +8,7 @@ class pageRputer extends Component {
         return (
           <Switch>
             <Route path="/work" component={WorkPlatformIndex}></Route>
-            <Route path="/new" component={OtherWindowIndex}></Route>
+            <Route exact path="/new" component={OtherWindowIndex}></Route>
             <Redirect to="/work" />
           </Switch>
         )

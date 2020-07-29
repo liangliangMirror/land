@@ -27,9 +27,8 @@ class contentRouter extends Component {
     // let componentStr =
     // let componentItem = require(componentStr)
     var AsyncComponent = asyncComponent(() =>
-      import(`@/page/${data.component}/index.js`)
+      import(`@/page/workPlatform/page/${data.component}/index.js`)
     )
-    console.log(`/work${data.url}`)
     if (data.url !== '/') {
       return (
         <Route key={data.id} path={`${data.url}`} component={AsyncComponent}></Route>

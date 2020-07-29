@@ -26,6 +26,29 @@
       "childs": []
     },
     {
+      "id": "M_U155308125680157474",
+      "name": "政策通告",
+      "parentId": "1",
+      "resourceId": "U15530812739245921",
+      "sortOrder": 15,
+      "state": "1",
+      "icon": "",
+      "url": "/policyAnnouncements",
+      "component":"PolicyAnnouncements",
+      "resource": {
+        "id": "U155308127392459294",
+        "name": "首页",
+        
+        "createTime": 1553081274000,
+        "state": "1",
+        "opAuths": null,
+        "auths": null,
+        "type": "other_resource",
+        "prefix": null
+      },
+      "childs": []
+    },
+    {
       "id": "M_U155307361536938460",
       "name": "董事会人员管理",
       "parentId": "1",
@@ -89,6 +112,11 @@
       "component":"home",
       "id": "M_U155308125680157473",
       "url": "/"
+    },
+    {
+      "component":"PolicyAnnouncements",
+      "id": "M_U155308125680157474",
+      "url": "/policyAnnouncements"
     },
     {
       "component":"directoratePeopleWrite",
