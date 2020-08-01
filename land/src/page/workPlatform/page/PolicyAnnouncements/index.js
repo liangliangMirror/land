@@ -6,6 +6,9 @@ import {querItem} from '@/utils/interfaceTstype.js'
 const AsyncQueryCondition = asyncComponent(() =>
   import(`@/components/QueryCondition/index.js`)
 )
+const AndtTable = asyncComponent(() =>
+  import(`@/components/AndtTable/index.js`)
+)
 
 const PolicyAnnouncements =  () => {
   const dispatchSetQuerList = (type,data) =>{
@@ -17,16 +20,21 @@ const PolicyAnnouncements =  () => {
     })
     setQuerList(arr)
   }
-  const reducer = (state, action) => {
-    switch (action.type) {
-        case 'groupName': 
-        dispatchSetQuerList(action.type,action.data)
-        return Object.assign({}, state, { step: state.groupName + 1 });
-        case 'numberInc': return Object.assign({}, state, { number: state.number + 1 });
-        case 'count': return Object.assign({}, state, { count: state.step + state.number });
-        default: return state;
-    }
+  const getList = () => {
+    console.log(1111)
   }
+  const reducer = (state, action) => {
+    
+    switch (action.type) {
+      case 'callBackQuery':
+        getList()
+        break;
+    
+      default:
+        dispatchSetQuerList(action.type,action.data)
+        break;
+    }
+  } 
   const initState = {
     groupName:''
   }
@@ -35,20 +43,37 @@ const PolicyAnnouncements =  () => {
   useEffect(()=>{
     setQuerList([
       {
-        type:'input',
+        type:'Input',
         props:'groupName',
-        label:'集团名称',
+        label:'标题',
         labelWidth:'',
         placeholder:'请输入集团名称名称',
-        value:123
+        value:123,
+        allowClear:false
+      },
+      {
+        type:'RangePicker',
+        props:'newsTitle',
+        label:'发布时间',
+        labelWidth:'',
+        value:'',
+        placeholder:'时间'
+      },
+      {
+        type:'Button',
+        genre:'primary',
+        label:'查询',
+        labelWidth:'',
+        props:'callBackQuery',
       }
     ])
   },[])
   return (
-    
+    <div>
       <MyCreateContext.Provider value={{querList,dispath}}>
         <AsyncQueryCondition />
-      </MyCreateContext.Provider>
+        <AndtTable/>
+      </MyCreateContext.Provider></div>
   )
 }
 export default PolicyAnnouncements
